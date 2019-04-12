@@ -612,4 +612,29 @@ childNodes хранит **дочерние** элементы, только дл
 * elem.removeAttribute(name) – удаляет атрибут
 * elem.attributes - получить весь список атрибутов элемента
 
-*Для атрибута data- создается свойство*, например <a data-num="10" id="a"> `a.dataset.num == 10`
+**Для атрибута data- создается свойство**, например <a data-num="10" id="a"> `a.dataset.num == 10`
+
+---
+
+* `var result = parent.contains(child)` Возвращает true, если parent содержит child или parent == child.
+
+`var result = nodeA.compareDocumentPosition(nodeB);`
+
+* 0 - a == b
+* 1 - в разных документах
+* 2 - b до a
+* 4 - a до b
+* 8 - a в b
+* 16 - b в a
+* 32 - зарезервировано
+
+---
+
+#### Создание элементов
+* document.createElement(tag)
+* document.createTextNode(text)
+
+#### Добавление / удаление
+* parent.appendChild(elem) - добавляет в конец
+* parent.insertBefore(elem, nextSibling) - добавляет перед nextSibling
+*Оба метода возвращают elem*
