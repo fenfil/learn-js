@@ -1,10 +1,4 @@
-<style>
-img {
-  max-width: 50%;
-}
-</style>
-
-#Метки для break/continue
+# Метки для break/continue
 
 ```
 outer: for (var i = 0; i < 3; i++) {
@@ -27,6 +21,7 @@ outer: for (var i = 0; i < 3; i++) {
 
 
 `var sum = new Function('a,b', ' return a+b; ');`
+`var sum = new Function('a', 'b', ' return a+b; ');`
 
 this для new Function всегда = window
 ---
