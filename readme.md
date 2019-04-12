@@ -639,3 +639,54 @@ childNodes хранит **дочерние** элементы, только дл
 * parent.insertBefore(elem, nextSibling) - добавляет перед nextSibling
 
 *Оба метода возвращают elem*
+
+---
+#### Клонирование
+
+elem.cloneNode(bool)
+Если передать true - глубокое клонирование со всеми атрибутами,
+false - без дочерних элементов
+
+---
+#### Удаление
+elem.remove() - новый метод (ie11- не работает)
+parent.removeChild(elem)
+parent.replaceChild(newElem, elem)
+
+**Чтобы переместить элемент, достаточно вставить его на новое место, он автоматически удалиться со старого**
+
+---
+
+### Мультивставка
+elem.insertAdjacent(where, html), где where -
+* beforeBegin – перед elem.
+* afterBegin – внутрь elem, в самое начало.
+* beforeEnd – внутрь elem, в конец.
+* afterEnd – после elem.
+
+elem.insertAdjacentElement(where, newElem) – вставляет в произвольное место не строку HTML, а элемент newElem.
+elem.insertAdjacentText(where, text) – создаёт текстовый узел из строки text и вставляет его в указанное место относительно elem.
+
+**Это самые универсальные методы**
+
+#### DocumentFragment
+
+`var fragment = document.createDocumentFragment();`
+
+DocumentFragment - не html узел, но в него можно вставлять html элементы с помощью обычных методов
+Его «Фишка» заключается в том, что когда DocumentFragment вставляется в DOM – то он исчезает, а вместо него вставляются его дети. Это свойство является уникальной особенностью DocumentFragment.
+
+### Новые методы для работы с узлами
+
+* node.append(...nodes) – вставляет nodes в конец node,
+* node.prepend(...nodes) – вставляет nodes в начало node,
+* node.after(...nodes) – вставляет nodes после узла node,
+* node.before(...nodes) – вставляет nodes перед узлом node,
+* node.replaceWith(...nodes) – вставляет nodes вместо node.
+
+Эти методы ничего не возвращают
+
+### Стили
+
+document.getComputedStyle(elem) - получить свойства элемента
+document.getResolvedStyle(elem) - получить окончательные свойства элемента (в пикселях)
