@@ -618,7 +618,7 @@ childNodes хранит **дочерние** элементы, только дл
 
 * `var result = parent.contains(child)` Возвращает true, если parent содержит child или parent == child.
 
-`var result = nodeA.compareDocumentPosition(nodeB);`
+* `var result = nodeA.compareDocumentPosition(nodeB)`
 
 * 0 - a == b
 * 1 - в разных документах
@@ -637,4 +637,5 @@ childNodes хранит **дочерние** элементы, только дл
 #### Добавление / удаление
 * parent.appendChild(elem) - добавляет в конец
 * parent.insertBefore(elem, nextSibling) - добавляет перед nextSibling
+
 *Оба метода возвращают elem*
