@@ -1,0 +1,6 @@
+li {
+  border: none;
+}
+li:focus {
+  border: 1px solid black
+}
